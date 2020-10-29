@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ImageDownloader</string>
+    <string name="hey">Hey There! </string>
+    <string name="menu">Settings</string>
+    <string name="title_activity_main">Image Downloader</string>
+    <string name="str_btn_download">Download</string>
+    <string name="str_iv_description">Image downloaded</string>
+    <string name="str_tv_url">http://thrishna.in</string>
+</resources>
