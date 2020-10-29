@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 if (isNetworkAvailable()) {
                     etUrl = findViewById(R.id.et_url);
 
-                    DownloadTask downloadTask = (DownloadTask) new DownloadTask().execute("https://www.gettyimages.com/gi-resources/images/500px/983801190.jpg");
+                    DownloadTask downloadTask = (DownloadTask) new DownloadTask().execute("https://drive.google.com/file/d/1ZaS1iocan4hq0KBiPzSsEtksnnx7Snkc/view?usp=sharing");
 
-                    downloadTask.execute("https://drive.google.com/drive/folders/10RpOa-RYsY_tFtkzynEIH84eEXd--WeL?usp=sharing");
+                    downloadTask.execute(etUrl.getText().toString());
 
                 }else {
                     Toast.makeText(getBaseContext(), "Network is not available", Toast.LENGTH_SHORT).show();
@@ -83,7 +83,9 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e) {
             Log.d(TAG, e.toString());
         }finally {
-            inputStream.close();
+            if (inputStream != null) {
+                inputStream.close();
+            }
         }
         return bitmap;
     }
